@@ -5,7 +5,9 @@ import './CostBuilder.css';
 var BASE_URL = "https://shopicruit.myshopify.com/products.json?page=";
 var CLOCK = "Clock";
 var WATCH = "Watch";
+//img for robot on the left
 var MAX_ROBOT = "https://cdn.shopify.com/s/files/1/1000/7970/products/Aerodynamic_20Concrete_20Clock_large.png?v=1443055734";
+// img for robot on the right
 var MIN_ROBOT = "//cdn.shopify.com/s/files/1/1000/7970/products/Incredible_20Cotton_20Watch_large.png?v=1443055762";
 var CostBuilder = React.createClass({
     getInitialState: function() {
@@ -37,12 +39,14 @@ var CostBuilder = React.createClass({
                 var cost = 0;
                 var minTotalCost = 0;
                 console.log("we're on page" + pageNum);
+                //if there are no products then there are no more pages to query
                 if (data.products.length > 0) {
                     data.products.forEach(function(product) {
                         if (product.product_type === CLOCK || product.product_type === WATCH) {
                             var minCost = Number.MAX_SAFE_INTEGER;
                             product.variants.forEach(function(variant) {
                                 cost += parseFloat(variant.price);
+                                //keep track of the lowest cost so far in the product's variants
                                 minCost = parseFloat(variant.price) < minCost ? parseFloat(variant.price) : minCost;
                             });
                             minTotalCost += minCost;
