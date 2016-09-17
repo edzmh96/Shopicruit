@@ -7,12 +7,9 @@ var App = React.createClass({
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Shopify Watch/Clock Cost Counter</h2>
+          <h2>Shopify Watch/Clock Cost Calculator</h2>
           <h2> by Edward Zhou </h2>
         </div>
-        <p className="App-intro">
-          Cost to buy all the watches/clocks in the store:
-        </p>
       </div>
     );
   }

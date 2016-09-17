@@ -3,7 +3,38 @@
   text-align: center;
 }
 
-.cost-total{
+.cost-total {
     font-size: 30px;
     text-align: center;
+}
+
+.min-intro {
+    font-size: large;
+    text-align: center;
+}
+
+.max-intro {
+    font-size: large;
+    text-align: center;
+}
+
+.allCostSection {
+    overflow: hidden;
+}
+
+.maxCostSection {
+    position: relative;
+    float: left;
+    margin-left: 10%
+}
+
+.minCostSection {
+    position: relative;
+    float: left;
+    margin-left: 6%;
+}
+
+.robot {
+    width: 100px;
+    margin-left: 190px;
 }
